@@ -5,7 +5,7 @@ def user_input():
         return temp
     else:
         print("Input valid character. ")
-        user_input()
+        return user_input()
     
 def display_board():
     print("   C1  C2  C3")
@@ -47,8 +47,8 @@ def easy_level():
         
 def check_row():
     global rcount
-    rcount = 0
     for i in Board:
+        rcount = 0
         r = []
         for j in range(3):
             if i[j] == user_mark:
@@ -56,13 +56,11 @@ def check_row():
                 rcount += 1
             else:
                 r.append(0)
-        if rcount > 1:
-            return [r,i]
-           
-        
+                   
 def check_col():
     global ccount
     for i in range(3):
+        ccount = 0
         c = []
         for j in range(3):
             if Board[j][i] == user_mark:
@@ -70,11 +68,11 @@ def check_col():
                 ccount += 1
             else:
                 c.append(0)
-        if ccount > 1 :
-            return [c,i]
         
 def check_diag():
         global dcount, d1count
+        dcount = 0
+        d1count = 0
         d = []
         d1 = []
         for i in range(3):
