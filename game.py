@@ -178,6 +178,7 @@ def winning_cond():
             
 
 def game():
+    display_board()
     moves = 0
     while moves <= 9:
         print("Yours Turn: ")
